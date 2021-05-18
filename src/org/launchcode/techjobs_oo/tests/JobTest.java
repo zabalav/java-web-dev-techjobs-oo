@@ -52,5 +52,6 @@ public class JobTest {
         Job job2 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
         System.out.println(job2.getId());
         assertFalse(job1 == job2);
+        assertFalse(job1.equals(job2));
     }
 }
