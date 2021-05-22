@@ -35,32 +35,26 @@ public class Job {
 
     @Override
     public String toString() {
-        System.out.println(getId());
-        System.out.println(getName());
-        System.out.println((getEmployer()));
-        System.out.println(getLocation());
-        System.out.println(getPositionType());
-        System.out.println(getCoreCompetency());
-//        if (getName() == null ||
-//                getEmployer() == null ||
-//                getLocation() == null ||
-//                getPositionType() == null ||
-//                getCoreCompetency() == null) {
-//            throw new IllegalArgumentException("Data not available");
-        if (getName() == null) {
-            System.out.println("Data not available");
+//        System.out.println(getId());
+//        System.out.println(getName());
+//        System.out.println((getEmployer()));
+//        System.out.println(getLocation());
+//        System.out.println(getPositionType());
+//        System.out.println(getCoreCompetency());
+        if (this.getName() == null) {
+            setName("Data not available");
         }
-        if (getEmployer() == null) {
-            System.out.println("Data not available");
+        if (this.getEmployer() == null) {
+            this.employer.setValue("Data not available");
         }
-        if (getLocation() == null) {
-            System.out.println("Data not available");
+        if (this.getLocation() == null) {
+            this.location.setValue("Data not available");
         }
-        if (getPositionType() == null) {
-            System.out.println("Data not available");
+        if (this.getPositionType() == null) {
+            this.positionType.setValue("Data not available");
         }
-        if (getCoreCompetency() == null) {
-            System.out.println("Data not available");
+        if (this.getCoreCompetency() == null) {
+            this.coreCompetency.setValue("Data not available");
         }
 
             String jobList = System.lineSeparator() +
