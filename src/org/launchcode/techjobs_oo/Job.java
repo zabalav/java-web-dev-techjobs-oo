@@ -31,66 +31,109 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
-    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
-    //  match.
+    // custom toString method
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Job job = (Job) o;
-        return id == job.id;
-    }
+    public String toString() {
+        System.out.println(getId());
+        System.out.println(getName());
+        System.out.println((getEmployer()));
+        System.out.println(getLocation());
+        System.out.println(getPositionType());
+        System.out.println(getCoreCompetency());
+//        if (getName() == null ||
+//                getEmployer() == null ||
+//                getLocation() == null ||
+//                getPositionType() == null ||
+//                getCoreCompetency() == null) {
+//            throw new IllegalArgumentException("Data not available");
+        if (getName() == null) {
+            System.out.println("Data not available");
+        }
+        if (getEmployer() == null) {
+            System.out.println("Data not available");
+        }
+        if (getLocation() == null) {
+            System.out.println("Data not available");
+        }
+        if (getPositionType() == null) {
+            System.out.println("Data not available");
+        }
+        if (getCoreCompetency() == null) {
+            System.out.println("Data not available");
+        }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+            String jobList = System.lineSeparator() +
+                    "ID: " + this.getId() + System.lineSeparator() +
+                    "Name: " + this.getName() + System.lineSeparator() +
+                    "Employer: " + this.getEmployer() + System.lineSeparator() +
+                    "Location: " + this.getLocation() + System.lineSeparator() +
+                    "Position Type: " + this.getPositionType() + System.lineSeparator() +
+                    "Core Competency: " + this.getCoreCompetency() +
+                    System.lineSeparator();
+            return jobList;
+        }
 
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id.
+        // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
+        //  match.
 
-    public int getId() {
-        return id;
-    }
+        @Override
+        public boolean equals (Object o){
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Job job = (Job) o;
+            return id == job.id;
+        }
 
-    public String getName() {
-        return name;
-    }
+        @Override
+        public int hashCode () {
+            return Objects.hash(id);
+        }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
+        //  and id.
 
-    public Employer getEmployer() {
-        return employer;
-    }
+        public int getId () {
+            return id;
+        }
 
-    public void setEmployer(Employer employer) {
-        this.employer = employer;
-    }
+        public String getName () {
+            return name;
+        }
 
-    public Location getLocation() {
-        return location;
-    }
+        public void setName (String name){
+            this.name = name;
+        }
 
-    public void setLocation(Location location) {
-        this.location = location;
-    }
+        public Employer getEmployer() {
+            return employer;
+        }
 
-    public PositionType getPositionType() {
-        return positionType;
-    }
+        public void setEmployer (Employer employer){
+            this.employer = employer;
+        }
 
-    public void setPositionType(PositionType positionType) {
-        this.positionType = positionType;
-    }
+        public Location getLocation () {
+            return location;
+        }
 
-    public CoreCompetency getCoreCompetency() {
-        return coreCompetency;
-    }
+        public void setLocation (Location location){
+            this.location = location;
+        }
 
-    public void setCoreCompetency(CoreCompetency coreCompetency) {
-        this.coreCompetency = coreCompetency;
+        public PositionType getPositionType () {
+            return positionType;
+        }
+
+        public void setPositionType (PositionType positionType){
+            this.positionType = positionType;
+        }
+
+        public CoreCompetency getCoreCompetency () {
+            return coreCompetency;
+        }
+
+        public void setCoreCompetency (CoreCompetency coreCompetency){
+            this.coreCompetency = coreCompetency;
+        }
     }
-}

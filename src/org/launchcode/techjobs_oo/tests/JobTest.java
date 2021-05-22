@@ -1,6 +1,5 @@
 package org.launchcode.techjobs_oo.tests;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 
@@ -54,4 +53,51 @@ public class JobTest {
         assertFalse(job1 == job2);
         assertFalse(job1.equals(job2));
     }
+
+    @Test
+    public void testJobToStringHasBlankLines() {
+        Job job = new Job();
+        System.out.println(job);
+       assertTrue(job.toString().equals(
+               System.lineSeparator() +
+               "ID: " + "1" + System.lineSeparator() +
+               "Name: " + "Data not available" + System.lineSeparator() +
+               "Employer: " + "Data not available" + System.lineSeparator() +
+               "Location: " + "Data not available" + System.lineSeparator() +
+               "Position Type: " + "Data not available" + System.lineSeparator() +
+               "Core Competency: " + "Data not available" +
+               System.lineSeparator()));
+    }
+
+    @Test
+    public void testJobToStringHasLabels() {
+        Job job = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+        System.out.println(job);
+        assertTrue(job.toString().equals(
+                System.lineSeparator() +
+                "ID: " + job.getId() + System.lineSeparator() +
+                "Name: " + job.getName() + System.lineSeparator() +
+                "Employer: " + job.getEmployer() + System.lineSeparator() +
+                "Location: " + job.getLocation() + System.lineSeparator() +
+                "Position Type: " + job.getPositionType() + System.lineSeparator() +
+                "Core Competency: " + job.getCoreCompetency() +
+                System.lineSeparator()));
+    }
+
+    @Test
+    public void testJobToStringHasEmptyFieldMsg() {
+        Job job = new Job();
+        System.out.println(job.toString());
+        assertTrue(job.toString().equals(System.lineSeparator() +
+                "ID: " + "1" + System.lineSeparator() +
+                "Name: " + "Data not available" + System.lineSeparator() +
+                "Employer: " + "Data not available" + System.lineSeparator() +
+                "Location: " + "Data not available" + System.lineSeparator() +
+                "Position Type: " + "Data not available" + System.lineSeparator() +
+                "Core Competency: " + "Data not available" +
+                System.lineSeparator()));
+
+    }
+
 }
+
