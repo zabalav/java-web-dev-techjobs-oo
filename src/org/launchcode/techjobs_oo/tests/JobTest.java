@@ -54,7 +54,7 @@ public class JobTest {
         System.out.println(job);
        assertTrue(job.toString().equals(
                System.lineSeparator() +
-               "ID: " + "1" + System.lineSeparator() +
+               "ID: " + job.getId() + System.lineSeparator() +
                "Name: " + "Data not available" + System.lineSeparator() +
                "Employer: " + "Data not available" + System.lineSeparator() +
                "Location: " + "Data not available" + System.lineSeparator() +
@@ -83,7 +83,7 @@ public class JobTest {
         Job job = new Job();
         System.out.println(job.toString());
         assertTrue(job.toString().equals(System.lineSeparator() +
-                "ID: " + "1" + System.lineSeparator() +
+                "ID: " + job.getId() + System.lineSeparator() +
                 "Name: " + "Data not available" + System.lineSeparator() +
                 "Employer: " + "Data not available" + System.lineSeparator() +
                 "Location: " + "Data not available" + System.lineSeparator() +
