@@ -1,5 +1,7 @@
 package org.launchcode.techjobs_oo;
 
+import java.util.Objects;
+
 public abstract class JobField {
     private int id;
     private static int nextId = 1;
@@ -29,11 +31,11 @@ public abstract class JobField {
 
     @Override
     public String toString() {
-        return super.toString();
+        return value;
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(getId());
     }
 }
